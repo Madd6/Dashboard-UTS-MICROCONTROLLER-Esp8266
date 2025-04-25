@@ -1,7 +1,7 @@
 export default function Loading() {
     // You can add any UI inside Loading, including a Skeleton.
     return (
-        <div className="w-full h-full flex items-center justify-center">
+        <div className="w-full h-[100vh] flex items-center justify-center">
             <div className="w-32 h-32 relative flex items-center justify-center">
                 <div className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xl animate-pulse" />
                 <div className="w-full h-full relative flex items-center justify-center">
