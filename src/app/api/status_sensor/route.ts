@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const supabase = await createClient();
     const { data: value_sensor, error } = await supabase
-        .from('tinggi_air')
+        .from('status_sensor')
         .select('*')
         .order('id', { ascending: false })
         .limit(10);
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
   
       const supabase = await createClient();
       const { data, error } = await supabase
-        .from('tinggi_air')
+        .from('status_sensor')
         .insert([{ value: value_sensor }])
         .select()
   

@@ -7,7 +7,7 @@ import LetterGlitch from "@/components/ui/letterglitch";
 
 export default async function Page() {
     const supabase = await createClient();
-    const { data,count } = await supabase.from("tinggi_air").select('*', { count: 'exact', head: false })
+    const { data,count } = await supabase.from("status_sensor").select('*', { count: 'exact', head: false })
     .order('id', { ascending: false })
     .limit(8);
   return (

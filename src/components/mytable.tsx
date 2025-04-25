@@ -1,5 +1,5 @@
 "use client";
-import { useRealtimeData,tinggi_air } from "@/app/utils/realtimedata"
+import { useRealtimeData,status_sensor } from "@/app/utils/realtimedata"
 import {
     Table,
     TableBody,
@@ -15,15 +15,15 @@ import {
         <h1 className="text-5xl font-bold">{data}</h1>
     )
  }
- function MyTable({data} : {data:tinggi_air[]}) {
-   useRealtimeData("tinggi_air");
+ function MyTable({data} : {data:status_sensor[]}) {
+   useRealtimeData("status_sensor");
    return (
         <Table>
-            <TableCaption>data tinggi air.</TableCaption>
+            <TableCaption>data status sensor.</TableCaption>
             <TableHeader>
                 <TableRow>
                     <TableHead className="w-[100px]">Id</TableHead>
-                    <TableHead>Tinggi</TableHead>
+                    <TableHead>status sensor</TableHead>
                     <TableHead className="text-right">Timestamp</TableHead>
                 </TableRow>
             </TableHeader>

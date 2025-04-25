@@ -22,7 +22,7 @@ const items = [
     icon: Activity,
   },
   {
-    title: "Tabel Tiggi Air",
+    title: "Tabel status sensor",
     url: "/table",
     icon: ClipboardList,
   }

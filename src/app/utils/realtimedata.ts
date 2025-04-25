@@ -7,7 +7,7 @@ export type Suhu = {
   id: number;
   value: number;
 };
-export type tinggi_air = {
+export type status_sensor = {
   id: number;
   value: number;
   timestamp: string;
