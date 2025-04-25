@@ -33,7 +33,7 @@ type valueSensor = {
 
 export function Grafik({sensor} : {sensor: valueSensor[]}) {
   useRealtimeData("sensor_suhu")
-  sensor?.map((item) => {
+  sensor?.map(() => {
     const first10 = sensor.slice(0, 10)
     const middle10 = sensor.slice(-20, -10)
     const last10 = sensor.slice(-10)

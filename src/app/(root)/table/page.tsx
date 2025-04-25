@@ -7,12 +7,14 @@ import LetterGlitch from "@/components/ui/letterglitch";
 
 export default async function Page() {
     const supabase = await createClient();
-    const { data } = await supabase.from("tinggi_air").select();
+    const { data,count } = await supabase.from("tinggi_air").select('*', { count: 'exact', head: false })
+    .order('id', { ascending: false })
+    .limit(8);
   return (
-    <div className="w-[90%] h-[90vh] m-auto rounded-xl flex flex-col items-center justify-around bg-accent text-accent-foreground">
+    <div className="w-[90%] h-[95vh] m-auto rounded-xl flex flex-col items-center justify-around bg-accent text-accent-foreground">
         <div className="w-full h-[24%] flex items-center justify-around">
             <Card className="w-[32%] h-full rounded-md flex flex-row justify-center items-center gap-2">
-                <TotalData data={data ?? []} />
+                <TotalData data={count ?? ""} />
                 <h1 className="text-md font-extralight">data</h1>
             </Card>
             <div className="w-[66%] h-full rounded-md overflow-hidden">

@@ -1,12 +1,6 @@
 import { Grafik } from "@/components/grafik";
-import Navbar from "@/components/navbar";
-import { ModeToggle } from "@/components/ui/toggle-mode";
 import { createClient } from "../../utils/supabase/server";
 import Lightning from "@/components/lightning";
-type Props = {
-  id: number,
-  value: number
-}
 
 export default async function Home() {
   const supabase = await createClient();

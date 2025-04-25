@@ -1,23 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/app/utils/supabase/server';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = await createClient();
-    let { data: value_sensor, error } = await supabase
+    const { data: value_sensor, error } = await supabase
         .from('sensor_suhu')
         .select('*')
     if (error) {
         throw error;
     }
     return NextResponse.json({result: value_sensor});
-  }   catch (err: any) {
-        console.error('Error:', err);
-        return NextResponse.json({ 
-          error: err.message || 'Unknown error', 
-          details: err 
-        });
-    }
+  }  catch (err: unknown) {
+      console.error('Error:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      return NextResponse.json({ 
+        error: errorMessage, 
+        details: err 
+      });
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -34,10 +35,11 @@ export async function POST(request: NextRequest) {
       if (error) throw error;
   
       return NextResponse.json({ result: data });
-    }  catch (err: any) {
+    }catch (err: unknown) {
         console.error('Error:', err);
+        const errorMessage = err instanceof Error ? err.message : 'Unknown error';
         return NextResponse.json({ 
-          error: err.message || 'Unknown error', 
+          error: errorMessage, 
           details: err 
         });
     }

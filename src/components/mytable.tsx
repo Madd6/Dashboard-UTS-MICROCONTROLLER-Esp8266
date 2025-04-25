@@ -10,9 +10,9 @@ import {
     TableRow,
   } from "@/components/ui/table"
  
- function TotalData({data} : {data:tinggi_air[]}) {
+ function TotalData({data} : {data:number | string}) {
     return (
-        <h1 className="text-5xl font-bold">{data?.length}</h1>
+        <h1 className="text-5xl font-bold">{data}</h1>
     )
  }
  function MyTable({data} : {data:tinggi_air[]}) {

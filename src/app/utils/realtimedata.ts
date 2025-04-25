@@ -13,7 +13,6 @@ export type tinggi_air = {
   timestamp: string;
 };
 
-const supabase = createClient();
 
 export function useRealtimeData(table: string) {
   const supabase = createClient()
@@ -31,6 +30,6 @@ export function useRealtimeData(table: string) {
       return () => {
         supabase.removeChannel(channel)
       }
-    }, [supabase, router])
+    }, [supabase, router, table])
 
 }

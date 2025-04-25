@@ -1,5 +1,5 @@
 'use client'
-import { Activity, ClipboardList, Thermometer } from "lucide-react"
+import { Activity, ClipboardList } from "lucide-react"
 
 import {
   Sidebar,
