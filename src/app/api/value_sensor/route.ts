@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
         .from('sensor_suhu')
         .insert([{ value: value_sensor }])
         .select()
-  
+        console.log(value_sensor)
       if (error) throw error;
   
       return NextResponse.json({ result: data });
