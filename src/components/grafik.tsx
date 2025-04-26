@@ -60,13 +60,16 @@ export function Grafik({sensor} : {sensor: valueSensor[]}) {
         <CartesianGrid vertical={false} />
         <XAxis
             dataKey="suhu"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
+            // tickLine={false}
+            // tickMargin={10}
+            // axisLine={false}
+            // tickFormatter={(value) => value.slice(0, 3)}
         />
         <YAxis
             dataKey="no"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
         />
         <ChartTooltip content={<ChartTooltipContent labelKey="suhu"/>} />
         <Bar dataKey="1" barSize={40} radius={[8, 8, 0, 0]} opacity={.3} fill="#2b4539"  />
