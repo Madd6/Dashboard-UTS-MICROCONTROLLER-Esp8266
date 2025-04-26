@@ -58,19 +58,19 @@ export function Grafik({sensor} : {sensor: valueSensor[]}) {
             </filter>
         </defs>
         <CartesianGrid vertical={false} />
-        <XAxis
+        <YAxis
             dataKey="no"
             tickLine={false}
             tickMargin={10}
             axisLine={false}
             tickFormatter={(value) => value.slice(0, 3)}
         />
-        <YAxis
+        <XAxis
             dataKey="suhu"
         />
         <ChartTooltip content={<ChartTooltipContent labelKey="suhu"/>} />
         <Bar dataKey="1" barSize={40} radius={[8, 8, 0, 0]} opacity={.3} fill="#2b4539"  />
-        <Line type="monotone" dataKey="0" radius={4} dot={false} stroke="#61b3dc" strokeWidth={2} style={{ filter: "url(#glow)" }}/>
+        {/* <Line type="monotone" dataKey="0" radius={4} dot={false} stroke="#61b3dc" strokeWidth={2} style={{ filter: "url(#glow)" }}/> */}
         <Line type="monotone" dataKey="suhu" radius={4} dot={false} stroke="#61dca3" strokeWidth={2} style={{ filter: "url(#glow)" }}/>
       </ComposedChart>
     </ChartContainer>
