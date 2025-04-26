@@ -58,15 +58,15 @@ export function Grafik({sensor} : {sensor: valueSensor[]}) {
             </filter>
         </defs>
         <CartesianGrid vertical={false} />
-        <YAxis
-            dataKey="no"
+        <XAxis
+            dataKey="suhu"
             tickLine={false}
             tickMargin={10}
             axisLine={false}
             tickFormatter={(value) => value.slice(0, 3)}
         />
-        <XAxis
-            dataKey="suhu"
+        <YAxis
+            dataKey="no"
         />
         <ChartTooltip content={<ChartTooltipContent labelKey="suhu"/>} />
         <Bar dataKey="1" barSize={40} radius={[8, 8, 0, 0]} opacity={.3} fill="#2b4539"  />
